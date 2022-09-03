@@ -43,15 +43,22 @@ $(document).ready(function () {
 	// splide contructor and mount 
 	new Splide('#image-carousel', {
 		arrows: false,  //no display of arrows 
-		perPage: 3,     //on media > 640 shows all 3 slides, acting like 3 columns 
+		perPage: 3,     //on media > 1000 shows all 3 slides, acting like 3 columns 
 		pagination: false, //no diplay of dots
 		mediaQuery: 'max',
+		height: '406px',
 		breakpoints: {
-			640: {
-				perPage: 1, //on media < 640 shows only 1 slide per page. 
+			1000: {
+				perPage: 1, //on media < 1000 shows only 1 slide per page. 
 			}
 		}
 	}).mount();
+
+
+	
+	$('#modal__closeButton').click( () => {  $('#modal').css({ top: '-100%' });})
+	$('#modal__showButton').click( () => {  $('#modal').css({ top: '0' });})
+
 
 });
 
